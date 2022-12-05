@@ -1,0 +1,44 @@
+*SE NÃO CONECTAR COM O BANCO DE DADOS A PAGINA CONEXAO.PHP, NA SENHA ESTÁ NULL, COLOCAR A SENHA DO SEU MYSQL*
+
+create database sistema;
+use sistema;
+
+create table usuarios
+(codigo_usuario int primary key auto_increment,
+login varchar(10) not null,
+senha varchar(10) not null); 
+
+Create table turma
+(cod_turma int primary key auto_increment,
+nomeDisc varchar(50)
+);
+
+
+create table aluno(
+cod_aluno int primary key auto_increment,
+nome varchar(50) not null,
+data_nas varchar(11) not null, 
+endereco  varchar(50),
+rg varchar(12) not null,
+cpf varchar(14) not null,
+sexo varchar(10),
+cod_turma int not null,
+FOREIGN KEY (cod_turma) REFERENCES turma(cod_turma)
+);
+
+create table professor(
+cod_prof int primary key auto_increment,
+nome varchar(50) not null,
+data_nas varchar(11) not null, 
+endereco  varchar(50),
+rg varchar(12) not null,
+cpf varchar(14) not null,
+sexo varchar(10),
+cod_turma int not null,
+FOREIGN KEY (cod_turma) REFERENCES turma(cod_turma)
+);
+
+Create table turma
+(cod_turma int primary key auto_increment,
+nomeDisc varchar(50)
+);
